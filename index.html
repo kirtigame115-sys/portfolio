@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<style>
+    /* Smooth Native Scrolling */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Hover Transitions & Interactive Visual Mechanics */
+    .transition-hover {
+        transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+    }
+
+    .transition-hover:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12) !important;
+    }
+
+    /* Fixed Action UI Elements */
+    #backToTop {
+        position: fixed;
+        right: 25px;
+        bottom: 35px;
+        width: 50px;
+        height: 50px;
+        border: none;
+        border-radius: 50%;
+        background: #0d6efd;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        display: none;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    #backToTop:hover {
+        background: #0b5ed7;
+        transform: scale(1.05);
+    }
+
+    #whatsappBtn {
+        position: fixed;
+        left: 25px;
+        bottom: 35px;
+        width: 55px;
+        height: 55px;
+        background: #25D366;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        z-index: 9999;
+        transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        text-decoration: none;
+    }
+
+    #whatsappBtn img {
+        width: 28px;
+        height: 28px;
+    }
+
+    #whatsappBtn:hover {
+        transform: scale(1.12);
+    }
+
+    /* Structural Section Borders */
+    .section-title-line {
+        width: 60px;
+        height: 3px;
+        background-color: dark;
+        margin: 0 auto;
+        border-radius: 2px;
+    }
+</style>
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#home">
+            <img src="image/kirti.jpg" alt="Logo" style="width:42px; height:42px; object-fit:cover;" class="rounded-circle me-2">
+            <span class="fw-bold tracking-tight">Kirti Game</span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ms-auto gap-1">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skill">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                <li class="nav-item"><a class="nav-link" href="#project">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#certification">Certifications</a></li>
+                <li class="nav-item"><a class="nav-link" href="#achievement">Achievements</a></li>
+                <li class="nav-item"><a class="nav-link" href="#resume">Resume/CV</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact Me</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Select all navigation links and the collapsible menu wrapper
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const menuToggle = document.getElementById('collapsibleNavbar');
+    
+    navLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+            // Check if the navbar is currently open (has the 'show' class) on mobile view
+            if (menuToggle.classList.contains('show')) {
+                // Get the existing Bootstrap collapse instance or initialize a new one, then hide it
+                const bsCollapse = bootstrap.Collapse.getInstance(menuToggle) || new bootstrap.Collapse(menuToggle);
+                bsCollapse.hide();
+            }
+        });
+    });
+</script>
+    <section id="home" class="py-5 d-flex align-items-center min-vh-100 text-white"
+        style="background: linear-gradient(135deg, #06061c 0%, #0b0f19 100%);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-center text-lg-start" data-aos="fade-right" data-aos-duration="1000">
+                    <h1 class="display-4 fw-bold mb-2">
+                        Hi, I'm <span class="text-info">Kirti Game</span>
+                    </h1>
+                    <h3 class="h4 text-light opacity-75 mb-3 fw-semibold">Electronics & Telecommunication Student</h3>
+                    <p class="lead text-light opacity-50 mb-4">
+                        Passionate about creating responsive websites and user-friendly web applications using HTML,
+                        CSS, Bootstrap, JavaScript, and modern web technologies.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start">
+                        <a href="#project" class="btn btn-info btn-lg px-4 shadow-sm text-dark fw-bold">View
+                            Projects</a>
+                        <a href="#contact" class="btn btn-outline-info btn-lg px-4">Contact Me</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center mt-5 mt-lg-0" data-aos="zoom-in" data-aos-duration="1000"
+                    data-aos-delay="200">
+                    <img src="image/WhatsApp Image 2026-06-29 at 12.41.06 AM.jpeg" alt="Profile Photo"
+                        class="rounded-circle border border-info border-3 shadow"
+                        style="max-width:380px; width:350px; height:350px; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="py-5 text-white" style="background: linear-gradient(135deg, #0b0f19 0%, #111827 100%);">
+        <div class="container" data-aos="fade-up" data-aos-duration="800">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-info">About Me</h2>
+                <p class="text-light opacity-50 mb-3">Get to know me better</p>
+                <div class="section-title-line"
+                    style="background-color: #0dcaf0; height: 3px; width: 60px; margin: 0 auto;"></div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card border border-light border-opacity-10 shadow-lg p-4 p-md-5"
+                        style="background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px);">
+                        <h3 class="fw-bold mb-3 text-info">Hello, I'm Kirti</h3>
+                        <p class="text-light opacity-75">
+                            I am a passionate and dedicated Electronics & Telecommunication student with a strong
+                            interest in Hardware engineering and software engineering. I enjoy creating responsive,
+                            user-friendly, and visually appealing websites using modern technologies.
+                        </p>
+                        <p class="text-light opacity-75">
+                            My technical skills stretch across hardware logic, low-level architecture programming, and
+                            high-level responsive framework designs. I continuously test new software tools through
+                            projects that help me balance my engineering background with ENTC logic.
+                        </p>
+                        <div class="row g-3 my-4">
+                            <div class="col-6 col-md-3">
+                                <div class="p-3 text-center rounded border border-light border-opacity-10 h-100"
+                                    style="background: rgba(13, 202, 240, 0.1); color: #0dcaf0;">
+                                    <div class="small fw-bold text-uppercase tracking-wider">Frontend Design</div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="p-3 text-center rounded border border-light border-opacity-10 h-100"
+                                    style="background: rgba(255, 193, 7, 0.1); color: #ffc107;">
+                                    <div class="small fw-bold text-uppercase tracking-wider">ENTC Systems</div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="p-3 text-center rounded border border-light border-opacity-10 h-100"
+                                    style="background: rgba(25, 135, 84, 0.1); color: #198754;">
+                                    <div class="small fw-bold text-uppercase tracking-wider">IoT Automation</div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="p-3 text-center rounded border border-light border-opacity-10 h-100"
+                                    style="background: rgba(13, 110, 253, 0.1); color: #0d6efd;">
+                                    <div class="small fw-bold text-uppercase tracking-wider">Hardware Logic</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-4 pt-3 border-top border-light border-opacity-10">
+                            <div class="col-sm-6 mb-2">
+                                <p class="mb-2 text-light"><strong class="text-info">Name:</strong> Kirti Game</p>
+                                <p class="mb-0 text-light"><strong class="text-info">Qualification:</strong> ENTC
+                                    Diploma Student</p>
+                            </div>
+                            <div class="col-sm-6 mb-2">
+                                <p class="mb-2 text-light"><strong class="text-info">Email:</strong> <a
+                                        href="mailto:Kirtigame115@gmail.com"
+                                        class="text-light text-decoration-none border-bottom border-light border-opacity-20">Kirtigame115@gmail.com</a>
+                                </p>
+                                <p class="mb-0 text-light"><strong class="text-info">Location:</strong>
+                                    Maharashtra,India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="skill" class="py-5 text-white" style="background: linear-gradient(135deg, #111827 0%, #0b0f19 100%);">
+        <div class="container" data-aos="fade-up" data-aos-duration="800">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-info">Skills & Technical Expertise</h2>
+                <p class="text-light opacity-50 mb-3">A deep dive into my engineering tools and web developer stack</p>
+                <div class="section-title-line"
+                    style="background-color: #0dcaf0; height: 3px; width: 60px; margin: 0 auto;"></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
+                    <div class="card h-100 border border-light border-opacity-10 p-4 shadow-sm text-white"
+                        style="background: rgba(255, 255, 255, 0.02);">
+                        <h4 class="fw-bold text-info mb-4"><i class="bi bi-code-slash me-2"></i>Web Development Stack
+                        </h4>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1"><span>HTML5 / CSS3 / Bootstrap</span><span
+                                    class="text-light opacity-50">90%</span></div>
+                            <div class="progress bg-dark bg-opacity-50" style="height: 7px;">
+                                <div class="progress-bar bg-info" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1"><span>JavaScript</span><span
+                                    class="text-light opacity-50">75%</span></div>
+                            <div class="progress bg-dark bg-opacity-50" style="height: 7px;">
+                                <div class="progress-bar bg-info" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1"><span>MySQL Database</span><span
+                                    class="text-light opacity-50">70%</span></div>
+                            <div class="progress bg-dark bg-opacity-50" style="height: 7px;">
+                                <div class="progress-bar bg-info" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <h6 class="fw-bold text-light opacity-75 mb-2">Secondary Toolkits:</h6>
+                            <span
+                                class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-20 p-2 m-1">VS
+                                Code</span>
+                            <span
+                                class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-20 p-2 m-1">Git
+                                & GitHub</span>
+                            <span
+                                class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-20 p-2 m-1">Responsive
+                                Web Design</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
+                    <div class="card h-100 border border-light border-opacity-10 p-4 shadow-sm text-white"
+                        style="background: rgba(255, 255, 255, 0.02);">
+                        <h4 class="fw-bold text-info mb-4"><i class="bi bi-cpu me-2"></i>Engineering Foundations</h4>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1"><span>Python Programming</span>
+                                <span class="text-info opacity-50">80%</span>
+                            </div>
+                            <div class="progress bg-info bg-opacity-50" style="height: 7px;">
+                                <div class="progress-bar bg-info" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1"><span>Java / C / C++</span>
+                                <span class="text-info opacity-50">75%</span>
+                            </div>
+                            <div class="progress bg-info bg-opacity-50" style="height: 7px;">
+                                <div class="progress-bar bg-info" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1"><span>Hardware Debugging</span>
+                                <span class="text-info opacity-50">80%</span>
+                            </div>
+                            <div class="progress bg-info bg-opacity-50" style="height: 7px;">
+                                <div class="progress-bar bg-info" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <h6 class="fw-bold text-info opacity-75 mb-2">Systems & Infrastructure:</h6>
+                            <span
+                                class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-20 p-2 m-1">Windows</span>
+                            <span
+                                class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-20 p-2 m-1">Linux
+                                Basic</span>
+                            <span
+                                class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-20 p-2 m-1">MS
+                                Office Suite</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="education" class="py-5 text-white"
+        style="background: linear-gradient(135deg, #0b0f19 0%, #111827 100%);">
+        <div class="container" data-aos="fade-up" data-aos-duration="800">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-info">Education</h2>
+                <p class="text-light opacity-50 mb-3">My academic qualifications and technical foundation</p>
+                <div class="section-title-line"
+                    style="background-color: #0dcaf0; height: 3px; width: 60px; margin: 0 auto;"></div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-8">
+                    <div class="position-relative border-start border-2 border-info ps-4 ms-2 d-flex flex-column gap-4">
+                        <div class="position-relative" data-aos="zoom-in-right" data-aos-duration="800">
+                            <div class="position-absolute bg-info rounded-circle"
+                                style="width: 14px; height: 14px; left: -31px; top: 6px; border: 3px solid #0b0f19;">
+                            </div>
+                            <div class="card border border-light border-opacity-10 p-4 text-white"
+                                style="background: rgba(255, 255, 255, 0.03);">
+                                <div class="d-flex flex-wrap justify-content-between align-items-center mb-2 gap-2">
+                                    <h4 class="fw-bold text-info mb-0 h5">Diploma in Electronics & Telecommunication
+                                    </h4>
+                                    <span class="badge bg-info text-dark px-3 py-2 rounded-pill small fw-bold">2024 -
+                                        2027</span>
+                                </div>
+                                <h6 class="text-light opacity-75 mb-3 fw-medium">Shivaji Polytechnic College, Sangola
+                                </h6>
+                                <p class="card-text text-light opacity-50 small mb-0" style="line-height: 1.6;">
+                                    Gaining strong practical knowledge in programming, operating systems, and computer
+                                    networks.<br>
+                                    Building hands-on laboratory micro-projects using core frontend tools and relational
+                                    databases.<br>
+                                    Maintaining a strong MSBTE / Board academic record while developing real-world
+                                    coding skills.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="position-relative" data-aos="zoom-in-right" data-aos-duration="800">
+                            <div class="position-absolute bg-info rounded-circle"
+                                style="width: 14px; height: 14px; left: -31px; top: 6px; border: 3px solid #0b0f19;">
+                            </div>
+                            <div class="card border border-light border-opacity-10 p-4 text-white"
+                                style="background: rgba(255, 255, 255, 0.03);">
+                                <div class="d-flex flex-wrap justify-content-between align-items-center mb-2 gap-2">
+                                    <h4 class="fw-bold text-info mb-0 h5">Secondary School Certificate (10th Standard)
+                                    </h4>
+                                    <span class="badge bg-info text-dark px-3 py-2 rounded-pill small fw-bold">2023 -
+                                        2024</span>
+                                </div>
+                                <h6 class="text-light opacity-75 mb-3 fw-medium">Utkarsh Vidyalaya, Sangola</h6>
+                                <p class="card-text text-light opacity-50 small mb-0" style="line-height: 1.6;">
+                                    Completed secondary education under the State Board with a strong academic
+                                    foundation.<br>
+                                    Developed core competencies in Mathematics, Science, and logical
+                                    problem-solving.<br>
+                                    Actively participated in school-level technical exhibitions, sports, or
+                                    co-curricular activities.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="project" class="py-5 text-white"
+        style="background: linear-gradient(135deg, #111827 0%, #0b0f19 100%);">
+        <div class="container" data-aos="fade-up" data-aos-duration="800">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-info">Projects</h2>
+                <p class="text-light opacity-50 mb-3">Technical applications and implementation proofs</p>
+                <div class="section-title-line"
+                    style="background-color: #0dcaf0; height: 3px; width: 60px; margin: 0 auto;"></div>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="100">
+                    <article
+                        class="card h-100 border border-light border-opacity-10 text-center p-4 rounded-3 text-white"
+                        style="background: rgba(255, 255, 255, 0.03);">
+                        <div class="card-body d-flex flex-column justify-content-between p-0">
+                            <div class="mb-4">
+                                <div class="text-info mb-3"><i class="bi bi-building display-5"></i></div>
+                                <h5 class="card-title fw-bold text-info mb-2">Department Portal</h5>
+                                <p class="card-text text-light opacity-50 small px-2">
+                                    Designed and engineered a complete responsive web layout to display institutional
+                                    departments clearly using modern CSS structures.
+                                </p>
+                            </div>
+                            <div class="w-100">
+                                <a href="Department.html"
+                                    class="btn btn-outline-info px-4 py-2 w-100 rounded-pill fw-semibold tracking-wider text-uppercase small">
+                                    View department page
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
+                    <article
+                        class="card h-100 border border-light border-opacity-10 text-center p-4 rounded-3 text-white"
+                        style="background: rgba(255, 255, 255, 0.03);">
+                        <div class="card-body d-flex flex-column justify-content-between p-0">
+                            <div class="mb-4">
+                                <div class="text-info mb-3"><i class="bi bi-compass display-5"></i></div>
+                                <h5 class="card-title fw-bold text-info mb-2">Vacation Packages</h5>
+                                <p class="card-text text-light opacity-50 small px-2">
+                                    Explore our curated getaways and premium institutional retreats. Perfectly tailored
+                                    itineraries designed for relaxation and seamless team experiences.
+                                </p>
+                            </div>
+                            <div class="w-100">
+                                <a href="vacation.html"
+                                    class="btn btn-outline-info px-4 py-2 w-100 rounded-pill fw-semibold tracking-wider text-uppercase small">
+                                    View vacation page
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300">
+                    <article
+                        class="card h-100 border border-light border-opacity-10 text-center p-4 rounded-3 text-white"
+                        style="background: rgba(255, 255, 255, 0.03);">
+                        <div class="card-body d-flex flex-column justify-content-between p-0">
+                            <div class="mb-4">
+                                <div class="text-info mb-3"><i class="bi bi-heart-pulse display-5"></i></div>
+                                <h5 class="card-title fw-bold text-info mb-2">Patient Care</h5>
+                                <p class="card-text text-light opacity-50 small px-2">
+                                    Access comprehensive medical records, schedule clinical appointments, and manage
+                                    personalized healthcare treatment plans securely.
+                                </p>
+                            </div>
+                            <div class="w-100">
+                                <a href="patient.html"
+                                    class="btn btn-outline-info px-4 py-2 w-100 rounded-pill fw-semibold tracking-wider text-uppercase small">
+                                    View patient page
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="certification" class="py-5 text-white"
+        style="background: linear-gradient(135deg, #0b0f19 0%, #111827 100%);">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="800">
+                <h2 class="text-info fw-bold">Certifications</h2>
+                <div class="section-title-line"
+                    style="background-color: #0dcaf0; height: 3px; width: 60px; margin: 0 auto;"></div>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6" data-aos="fade-right" data-aos-duration="800">
+                    <div class="card h-100 border border-light border-opacity-10 p-4 text-white"
+                        style="background: rgba(255, 255, 255, 0.03);">
+                        <div class="d-flex align-items-start gap-3">
+                            <i class="bi bi-patch-check-fill text-success fs-2"></i>
+                            <div>
+                                <h4 class="fw-bold text-info h5 mb-1">Web Development Certification</h4>
+                                <p class="text-light opacity-50 small mb-0">Completed dynamic training paths specialized
+                                    in structural execution rules of HTML, CSS, Bootstrap, and JavaScript.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-left" data-aos-duration="800">
+                    <div class="card h-100 border border-light border-opacity-10 p-4 text-white"
+                        style="background: rgba(255, 255, 255, 0.03);">
+                        <div class="d-flex align-items-start gap-3">
+                            <i class="bi bi-patch-check-fill text-success fs-2"></i>
+                            <div>
+                                <h4 class="fw-bold text-info h5 mb-1">Python Programming Certification</h4>
+                                <p class="text-light opacity-50 small mb-0">Learned basic loops, operational logical
+                                    matrices, data object controls, and native software scripting components.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="achievement" class="py-5 text-white"
+        style="background: linear-gradient(135deg, #111827 0%, #0b0f19 100%);">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="800">
+                <h2 class="text-info fw-bold">Achievements</h2>
+                <div class="section-title-line"
+                    style="background-color: #0dcaf0; height: 3px; width: 60px; margin: 0 auto;"></div>
+            </div>
+            <div class="row justify-content-center" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                <div class="col-lg-9">
+                    <div class="card border border-light border-opacity-10 p-4 text-white"
+                        style="background: rgba(255, 255, 255, 0.03);">
+                        <div class="card-body">
+                            <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+                                <li class="d-flex align-items-start gap-2 text-light opacity-75"><i
+                                        class="bi bi-award-fill text-warning fs-5"></i> Successfully completed Diploma
+                                    in ENTC Engineering projects.</li>
+                                <li class="d-flex align-items-start gap-2 text-light opacity-75"><i
+                                        class="bi bi-award-fill text-warning fs-5"></i> Participated in Technical Quiz
+                                    and Coding Competitions.</li>
+                                <li class="d-flex align-items-start gap-2 text-light opacity-75"><i
+                                        class="bi bi-award-fill text-warning fs-5"></i> Earned certifications in Web
+                                    Development and Programming.</li>
+                                <li class="d-flex align-items-start gap-2 text-light opacity-75"><i
+                                        class="bi bi-award-fill text-warning fs-5"></i> Developed a Personal Portfolio
+                                    Website using HTML, CSS, Bootstrap, and JavaScript.</li>
+                                <li class="d-flex align-items-start gap-2 text-light opacity-75"><i
+                                        class="bi bi-award-fill text-warning fs-5"></i> Maintained good academic
+                                    performance throughout the diploma program.</li>
+                                <li class="d-flex align-items-start gap-2 text-light opacity-75"><i
+                                        class="bi bi-award-fill text-warning fs-5"></i> Actively participated in college
+                                    technical and cultural events.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CV Download / View Portal Interface -->
+    <section id="resume" class="py-5 text-white" style="background: linear-gradient(135deg, #0b0f19 0%, #111827 100%);">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="800">
+                <h2 class="text-info fw-bold">Resume / CV</h2>
+                <div class="section-title-line"
+                    style="background-color: #0dcaf0; height: 3px; width: 60px; margin: 0 auto;"></div>
+            </div>
+            <div class="row justify-content-center g-4" data-aos="zoom-in" data-aos-duration="800">
+                <!-- View Resume Card -->
+                <div class="col-sm-6 col-md-5 col-lg-4">
+                    <a href="Resume.html" target="_blank" rel="noopener noreferrer"
+                        class="card h-100 text-center text-decoration-none p-4 border border-info border-opacity-20 text-white position-relative overflow-hidden group-hover"
+                        style="background: rgba(13, 202, 240, 0.03); transition: all 0.3s ease-in-out;"
+                        onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(13, 202, 240, 0.15)'; this.style.background='rgba(13, 202, 240, 0.08)';"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.background='rgba(13, 202, 240, 0.03)';">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <i class="bi bi-eye text-info display-4 mb-3"></i>
+                            <h5 class="card-title fw-bold mb-2 text-info">View Resume</h5>
+                            <p class="small text-light opacity-50 m-0">Open CV in a new browser window</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Download Resume Card -->
+                <div class="col-sm-6 col-md-5 col-lg-4">
+                    <!-- Replace 'Resume.html' or add a path to your PDF like 'media/Kirti_Resume.pdf' if available -->
+                    <a href="Resume.html" download="Kirti_Game_Resume"
+                        class="card h-100 text-center text-decoration-none p-4 border border-success border-opacity-20 text-white position-relative overflow-hidden group-hover"
+                        style="background: rgba(25, 135, 84, 0.03); transition: all 0.3s ease-in-out;"
+                        onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(25, 135, 84, 0.15)'; this.style.background='rgba(25, 135, 84, 0.08)';"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.background='rgba(25, 135, 84, 0.03)';">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <i class="bi bi-cloud-arrow-down text-success display-4 mb-3"></i>
+                            <h5 class="card-title fw-bold mb-2 text-success">Download CV</h5>
+                            <p class="small text-light opacity-50 m-0">Save a local copy to your device</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="py-5 text-white" style="background: linear-gradient(135deg, #111827 0%, #06061c 100%);">
+    <div class="container shadow-lg rounded-3 p-4">
+        <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="800">
+            <h2 class="text-info fw-bold">Contact Me</h2>
+            <div class="section-title-line" style="background-color: #0dcaf0; height: 3px; width: 60px; margin: 0 auto;"></div>
+        </div>
+        
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+            <div class="col-md-8">
+                <div class="card border border-light border-opacity-10 p-4 text-white" style="background: rgba(255, 255, 255, 0.02);">
+                    
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label for="userName" class="form-label fw-semibold text-info">Your Name</label>
+                            <input type="text" id="userName" class="form-control bg-dark border-secondary text-white" placeholder="Enter your name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="userEmail" class="form-label fw-semibold text-info">Email Address</label>
+                            <input type="email" id="userEmail" class="form-control bg-dark border-secondary text-white" placeholder="Enter your email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="userPhone" class="form-label fw-semibold text-info">Phone Number</label>
+                            <input type="tel" id="userPhone" class="form-control bg-dark border-secondary text-white" placeholder="Enter your phone number">
+                        </div>
+                        <div class="mb-3">
+                            <label for="userMessage" class="form-label fw-semibold text-info">Message</label>
+                            <textarea id="userMessage" class="form-control bg-dark border-secondary text-white" rows="4" placeholder="Write your message" required></textarea>
+                        </div>
+                        
+                        <div class="p-3 rounded border border-secondary mb-4" style="background: rgba(0,0,0,0.2);">
+                            <h5 class="text-info fw-bold mb-2">Security Verification</h5>
+                            <div class="d-flex align-items-center gap-3 mb-2">
+                                <div id="captcha" class="badge bg-secondary fs-5 px-3 py-2 tracking-wider" style="font-family: monospace; min-width: 100px;"></div>
+                                <button type="button" class="btn btn-sm btn-outline-light" onclick="generateCaptcha()">
+                                    <i class="bi bi-arrow-clockwise"></i> Refresh
+                                </button>
+                            </div>
+                            <div class="row g-2 align-items-center">
+                                <div class="col-auto">
+                                    <input type="text" id="userInput" class="form-control bg-dark text-white border-secondary" placeholder="Enter code" style="max-width: 140px;">
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-warning fw-bold text-dark" onclick="validateCaptcha()">Verify Code</button>
+                                </div>
+                            </div>
+                            <p id="message" class="small mt-2 mb-0 fw-semibold"></p>
+                        </div>
+
+                        <button type="submit" id="submitBtn" class="btn btn-success w-100 py-2 fw-bold text-white shadow-sm btn-custom-active">
+                            <i class="bi bi-whatsapp me-2"></i>Send Message via WhatsApp
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.btn-custom-active {
+    transition: all 0.2s ease-in-out;
+}
+.btn-custom-active:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(25, 135, 84, 0.3) !important; /* Green glowing shadow tint */
+    filter: brightness(1.1);
+}
+.btn-custom-active:active {
+    transform: translateY(1px) scale(0.99);
+    filter: brightness(0.95);
+}
+</style>
+
+<script>
+    let activeCaptcha = "";
+    let isVerified = false; // Tracks security processing state dynamically
+
+    function generateCaptcha() {
+        const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; // Cleaned lookalike characters (0, O, 1, I) out for better UX
+        let result = "";
+        for (let i = 0; i < 6; i++) {
+            result += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        activeCaptcha = result;
+        const captchaEl = document.getElementById("captcha");
+        if (captchaEl) {
+            captchaEl.textContent = result;
+            document.getElementById("message").textContent = "";
+            document.getElementById("userInput").value = "";
+            isVerified = false;
+        }
+    }
+
+    function validateCaptcha() {
+        const userInput = document.getElementById("userInput").value.trim().toUpperCase(); // Matches case smoothly
+        const message = document.getElementById("message");
+
+        if (userInput === activeCaptcha) {
+            message.style.color = "#198754"; 
+            message.textContent = "✓ Verification Successful! Ready to send.";
+            isVerified = true;
+        } else {
+            message.style.color = "#dc3545"; 
+            message.textContent = "✗ Incorrect validation code. Please try again.";
+            isVerified = false;
+            generateCaptcha(); // Instantly recycles code on wrong input to stop bot-forcing
+        }
+    }
+
+    // Handles the Form Submission context smoothly
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+        e.preventDefault(); // Inhibits native frame refresh 
+
+        if (!isVerified) {
+            const message = document.getElementById("message");
+            message.style.color = "#ffc107"; // Warning gold color
+            message.textContent = "⚠ Please click 'Verify Code' successfully before sending.";
+            return;
+        }
+
+        // Target Phone Number (Replace with your actual country code + WhatsApp phone number)
+        // Format: CountryCode + Number without spaces or special symbols (e.g., 15551234567)
+        const whatsappNumber = "15551234567"; 
+
+        // Gather UI Input Field Elements
+        const name = document.getElementById("userName").value.trim();
+        const email = document.getElementById("userEmail").value.trim();
+        const phone = document.getElementById("userPhone").value.trim() || "Not Provided";
+        const msgText = document.getElementById("userMessage").value.trim();
+
+        // Encode parameters into an elegant, scannable format
+        const structuredText = `*New Contact Form Submission*\n\n` +
+                               `• *Name:* ${name}\n` +
+                               `• *Email:* ${email}\n` +
+                               `• *Phone:* ${phone}\n\n` +
+                               `*Message:*\n${msgText}`;
+
+        const encryptedPayload = encodeURIComponent(structuredText);
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encryptedPayload}`;
+
+        // Triggers safe alternative execution pipelines contextually
+        window.open(whatsappUrl, '_blank');
+
+        // Housekeeping clean up
+        this.reset();
+        isVerified = false;
+        generateCaptcha();
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        generateCaptcha();
+    });
+</script>
+    <!-- Floating Utility Hooks -->
+    <button id="backToTop" aria-label="Scroll to top">↑</button>
+    <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" id="whatsappBtn"
+        aria-label="Chat on WhatsApp">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Icon">
+    </a>
+    <!-- Bootstrap 5 JavaScript Module -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS (Animate On Scroll) JavaScript Module -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Client-Side Automation Logic -->
+    <script>
+        // Initialize Animate On Scroll (AOS) Engine
+        AOS.init({
+            once: true, // Animation occurs only once when scrolling down
+            mirror: false
+        });
+        // Back To Top Visual Logic Engine
+        const backToTop = document.getElementById("backToTop");
+        window.addEventListener("scroll", () => {
+            backToTop.style.display = window.scrollY > 300 ? "block" : "none";
+        });
+        backToTop.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
+    <footer id="footer" class="bg-dark text-light text-center p-4 mt-5 border-top border-secondary">
+        <div class="container">
+            <p class="mb-1 fw-semibold text-white">© 2026 All Rights Reserved | Designed by Kirti</p>
+            <p class="mb-3 small text-muted text-uppercase tracking-wider">Diploma Student | ENTC Engineering</p>
+            <div class="d-flex justify-content-center gap-3 small">
+                <a href="#home" class="text-secondary text-decoration-none link-light transition-all">Home</a>
+                <span class="text-secondary opacity-50">|</span>
+                <a href="#about" class="text-secondary text-decoration-none link-light transition-all">About</a>
+                <span class="text-secondary opacity-50">|</span>
+                <a href="#contact" class="text-secondary text-decoration-none link-light transition-all">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
