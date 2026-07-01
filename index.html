@@ -118,49 +118,55 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-    // Select all navigation links and the collapsible menu wrapper
-    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-    const menuToggle = document.getElementById('collapsibleNavbar');
-    
-    navLinks.forEach((link) => {
-        link.addEventListener('click', () => {
-            // Check if the navbar is currently open (has the 'show' class) on mobile view
-            if (menuToggle.classList.contains('show')) {
-                // Get the existing Bootstrap collapse instance or initialize a new one, then hide it
-                const bsCollapse = bootstrap.Collapse.getInstance(menuToggle) || new bootstrap.Collapse(menuToggle);
-                bsCollapse.hide();
-            }
+    document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll('.nav-link');
+        const menuToggle = document.getElementById('collapsibleNavbar');
+        
+        const navbar = document.querySelector('.custom-navbar') || document.querySelector('.navbar'); 
+
+        navLinks.forEach((link) => {
+            link.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                
+            
+                if (!targetId || targetId === '#' || !targetId.startsWith('#')) return;
+
+                const targetSection = document.querySelector(targetId);
+
+                if (targetSection) {
+                    e.preventDefault();
+
+                    
+                    const navbarHeight = navbar ? navbar.offsetHeight : 0;
+        
+                    const targetPosition = targetSection.getBoundingClientRect().top + window.scrollY - navbarHeight;
+
+                    
+                    if (menuToggle && menuToggle.classList.contains('show')) {
+                        
+                        
+                        if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+                            const bsCollapse = bootstrap.Collapse.getInstance(menuToggle) || new bootstrap.Collapse(menuToggle);
+                            bsCollapse.hide();
+
+                            menuToggle.addEventListener('hidden.bs.collapse', () => {
+                                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                            }, { once: true });
+                        } else {
+                            
+                            menuToggle.classList.remove('show');
+                            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                        }
+
+                    } else {
+                        
+                        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                    }
+                }
+            });
         });
     });
 </script>
-    <section id="home" class="py-5 d-flex align-items-center min-vh-100 text-white"
-        style="background: linear-gradient(135deg, #06061c 0%, #0b0f19 100%);">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 text-center text-lg-start" data-aos="fade-right" data-aos-duration="1000">
-                    <h1 class="display-4 fw-bold mb-2">
-                        Hi, I'm <span class="text-info">Kirti Game</span>
-                    </h1>
-                    <h3 class="h4 text-light opacity-75 mb-3 fw-semibold">Electronics & Telecommunication Student</h3>
-                    <p class="lead text-light opacity-50 mb-4">
-                        Passionate about creating responsive websites and user-friendly web applications using HTML,
-                        CSS, Bootstrap, JavaScript, and modern web technologies.
-                    </p>
-                    <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start">
-                        <a href="#project" class="btn btn-info btn-lg px-4 shadow-sm text-dark fw-bold">View
-                            Projects</a>
-                        <a href="#contact" class="btn btn-outline-info btn-lg px-4">Contact Me</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center mt-5 mt-lg-0" data-aos="zoom-in" data-aos-duration="1000"
-                    data-aos-delay="200">
-                    <img src="image/WhatsApp Image 2026-06-29 at 12.41.06 AM.jpeg" alt="Profile Photo"
-                        class="rounded-circle border border-info border-3 shadow"
-                        style="max-width:380px; width:350px; height:350px; object-fit: cover;">
-                </div>
-            </div>
-        </div>
-    </section>
     <section id="about" class="py-5 text-white" style="background: linear-gradient(135deg, #0b0f19 0%, #111827 100%);">
         <div class="container" data-aos="fade-up" data-aos-duration="800">
             <div class="text-center mb-5">
