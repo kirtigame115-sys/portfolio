@@ -236,75 +236,84 @@
         box-shadow: 0 5px 15px rgba(13, 202, 240, 0.4) !important;
     }
 </style>
-    <section id="about" class="py-5 text-white" style="background: linear-gradient(135deg, #0b0f19 0%, #111827 100%);">
-        <div class="container" data-aos="fade-up" data-aos-duration="800">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold text-info">About Me</h2>
-                <p class="text-light opacity-50 mb-3">Get to know me better</p>
-                <div class="section-title-line"
-                    style="background-color: #0dcaf0; height: 3px; width: 60px; margin: 0 auto;"></div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="card border border-light border-opacity-10 shadow-lg p-4 p-md-5"
-                        style="background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px);">
-                        <h3 class="fw-bold mb-3 text-info">Hello, I'm Kirti</h3>
-                        <p class="text-light opacity-75">
-                            I am a passionate and dedicated Electronics & Telecommunication student with a strong
-                            interest in Hardware engineering and software engineering. I enjoy creating responsive,
-                            user-friendly, and visually appealing websites using modern technologies.
-                        </p>
-                        <p class="text-light opacity-75">
-                            My technical skills stretch across hardware logic, low-level architecture programming, and
-                            high-level responsive framework designs. I continuously test new software tools through
-                            projects that help me balance my engineering background with ENTC logic.
-                        </p>
-                        <div class="row g-3 my-4">
-                            <div class="col-6 col-md-3">
-                                <div class="p-3 text-center rounded border border-light border-opacity-10 h-100"
-                                    style="background: rgba(13, 202, 240, 0.1); color: #0dcaf0;">
-                                    <div class="small fw-bold text-uppercase tracking-wider">Frontend Design</div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3">
-                                <div class="p-3 text-center rounded border border-light border-opacity-10 h-100"
-                                    style="background: rgba(255, 193, 7, 0.1); color: #ffc107;">
-                                    <div class="small fw-bold text-uppercase tracking-wider">ENTC Systems</div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3">
-                                <div class="p-3 text-center rounded border border-light border-opacity-10 h-100"
-                                    style="background: rgba(25, 135, 84, 0.1); color: #198754;">
-                                    <div class="small fw-bold text-uppercase tracking-wider">IoT Automation</div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3">
-                                <div class="p-3 text-center rounded border border-light border-opacity-10 h-100"
-                                    style="background: rgba(13, 110, 253, 0.1); color: #0d6efd;">
-                                    <div class="small fw-bold text-uppercase tracking-wider">Hardware Logic</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mt-4 pt-3 border-top border-light border-opacity-10">
-                            <div class="col-sm-6 mb-2">
-                                <p class="mb-2 text-light"><strong class="text-info">Name:</strong> Kirti Game</p>
-                                <p class="mb-0 text-light"><strong class="text-info">Qualification:</strong> ENTC
-                                    Diploma Student</p>
-                            </div>
-                            <div class="col-sm-6 mb-2">
-                                <p class="mb-2 text-light"><strong class="text-info">Email:</strong> <a
-                                        href="mailto:Kirtigame115@gmail.com"
-                                        class="text-light text-decoration-none border-bottom border-light border-opacity-20">Kirtigame115@gmail.com</a>
-                                </p>
-                                <p class="mb-0 text-light"><strong class="text-info">Location:</strong>
-                                    Maharashtra,India</p>
-                            </div>
-                        </div>
-                    </div>
+   <section id="home" class="py-5 d-flex align-items-center min-vh-100 text-white overflow-hidden"
+    style="background: linear-gradient(135deg, #06061c 0%, #0b0f19 100%);">
+    <div class="container">
+        <div class="row align-items-center">
+            
+            <div class="col-lg-6 text-center text-lg-start">
+                <h1 class="display-4 fw-bold mb-2 text-glow" data-aos="fade-up" data-aos-duration="800">
+                    Hi, I'm <span class="text-info animated-name">Kirti Game</span>
+                </h1>
+                
+                <h3 class="h4 text-light opacity-75 mb-3 fw-semibold" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
+                    Electronics & Telecommunication Student
+                </h3>
+                
+                <p class="lead text-light opacity-50 mb-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    Passionate about creating responsive websites and user-friendly web applications using HTML,
+                    CSS, Bootstrap, JavaScript, and modern web technologies.
+                </p>
+                
+                <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start" data-aos="fade-up" data-aos-duration="800" data-aos-delay="450">
+                    <a href="#project" class="btn btn-info btn-lg px-4 shadow-sm text-dark fw-bold btn-animated">View Projects</a>
+                    <a href="#contact" class="btn btn-outline-info btn-lg px-4 btn-animated">Contact Me</a>
                 </div>
             </div>
+            
+            <div class="col-lg-6 text-center mt-5 mt-lg-0" data-aos="zoom-in-left" data-aos-duration="1000" data-aos-delay="300">
+                <div class="img-floating-wrapper">
+                    <img src="image/WhatsApp Image 2026-06-29 at 12.41.06 AM.jpeg" alt="Profile Photo"
+                        class="rounded-circle border border-info border-3 profile-img-shadow"
+                        style="max-width: 380px; width: 350px; height: 350px; object-fit: cover;">
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+    /* 1. Smooth Floating Effect for the Profile Photo */
+    @keyframes floatAnimation {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0px); }
+    }
+    .img-floating-wrapper {
+        animation: floatAnimation 4s infinite ease-in-out;
+    }
+
+    /* 2. Continuous Subtle Glow Effect for Your Name */
+    @keyframes pulseGlow {
+        0%, 100% { text-shadow: 0 0 10px rgba(13, 202, 240, 0.2); }
+        50% { text-shadow: 0 0 20px rgba(13, 202, 240, 0.6), 0 0 30px rgba(13, 202, 240, 0.4); }
+    }
+    .animated-name {
+        display: inline-block;
+        animation: pulseGlow 3s infinite ease-in-out;
+    }
+
+    /* 3. Soft Ambient Shadow Layer around the Image Frame */
+    .profile-img-shadow {
+        box-shadow: 0 0 25px rgba(13, 202, 240, 0.3) !important;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    /* Scaled up subtly when hovered over with mouse cursor */
+    .profile-img-shadow:hover {
+        transform: scale(1.03);
+        box-shadow: 0 0 35px rgba(13, 202, 240, 0.6) !important;
+    }
+
+    /* 4. Interactive Lifting and Glow States for Action Buttons */
+    .btn-animated {
+        transition: all 0.3s ease-in-out !important;
+    }
+    .btn-animated:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(13, 202, 240, 0.4) !important;
+    }
+</style>
     <section id="skill" class="py-5 text-white" style="background: linear-gradient(135deg, #111827 0%, #0b0f19 100%);">
         <div class="container" data-aos="fade-up" data-aos-duration="800">
             <div class="text-center mb-5">
