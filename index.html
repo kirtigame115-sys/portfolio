@@ -776,6 +776,24 @@
             });
         });
     </script>
+    <script>
+    // Initialize Animate On Scroll (AOS) Engine
+    AOS.init({
+        once: true, // Animation occurs only once when scrolling down
+        mirror: false
+    });
+    // Back To Top Visual Logic Engine
+    const backToTop = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+        backToTop.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+    backToTop.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+</script>
  <footer id="footer" class="bg-dark text-light text-center p-4 mt-5 border-top border-secondary">
     <div class="container">
         <!-- Social & Professional Icons -->
