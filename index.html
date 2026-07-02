@@ -158,34 +158,84 @@
         });
     });
 </script>
-    <section id="home" class="py-5 d-flex align-items-center min-vh-100 text-white"
-        style="background: linear-gradient(135deg, #06061c 0%, #0b0f19 100%);">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 text-center text-lg-start" data-aos="fade-right" data-aos-duration="1000">
-                    <h1 class="display-4 fw-bold mb-2">
-                        Hi, I'm <span class="text-info">Kirti Game</span>
-                    </h1>
-                    <h3 class="h4 text-light opacity-75 mb-3 fw-semibold">Electronics & Telecommunication Student</h3>
-                    <p class="lead text-light opacity-50 mb-4">
-                        Passionate about creating responsive websites and user-friendly web applications using HTML,
-                        CSS, Bootstrap, JavaScript, and modern web technologies.
-                    </p>
-                    <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start">
-                        <a href="#project" class="btn btn-info btn-lg px-4 shadow-sm text-dark fw-bold">View
-                            Projects</a>
-                        <a href="#contact" class="btn btn-outline-info btn-lg px-4">Contact Me</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center mt-5 mt-lg-0" data-aos="zoom-in" data-aos-duration="1000"
-                    data-aos-delay="200">
-                    <img src="image/WhatsApp Image 2026-06-29 at 12.41.06 AM.jpeg" alt="Profile Photo"
-                        class="rounded-circle border border-info border-3 shadow"
-                        style="max-width:380px; width:350px; height:350px; object-fit: cover;">
+   <section id="home" class="py-5 d-flex align-items-center min-vh-100 text-white overflow-hidden"
+    style="background: linear-gradient(135deg, #06061c 0%, #0b0f19 100%);">
+    <div class="container">
+        <div class="row align-items-center">
+            
+            <div class="col-lg-6 text-center text-lg-start">
+                <h1 class="display-4 fw-bold mb-2 text-glow" data-aos="fade-up" data-aos-duration="800">
+                    Hi, I'm <span class="text-info animated-name">Kirti Game</span>
+                </h1>
+                
+                <h3 class="h4 text-light opacity-75 mb-3 fw-semibold" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
+                    Electronics & Telecommunication Student
+                </h3>
+                
+                <p class="lead text-light opacity-50 mb-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    Passionate about creating responsive websites and user-friendly web applications using HTML,
+                    CSS, Bootstrap, JavaScript, and modern web technologies.
+                </p>
+                
+                <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start" data-aos="fade-up" data-aos-duration="800" data-aos-delay="450">
+                    <a href="#project" class="btn btn-info btn-lg px-4 shadow-sm text-dark fw-bold btn-animated">View Projects</a>
+                    <a href="#contact" class="btn btn-outline-info btn-lg px-4 btn-animated">Contact Me</a>
                 </div>
             </div>
+            
+            <div class="col-lg-6 text-center mt-5 mt-lg-0" data-aos="zoom-in-left" data-aos-duration="1000" data-aos-delay="300">
+                <div class="img-floating-wrapper">
+                    <img src="image/WhatsApp Image 2026-06-29 at 12.41.06 AM.jpeg" alt="Profile Photo"
+                        class="rounded-circle border border-info border-3 profile-img-shadow"
+                        style="max-width: 380px; width: 350px; height: 350px; object-fit: cover;">
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+    /* 1. Smooth Floating Effect for the Profile Photo */
+    @keyframes floatAnimation {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0px); }
+    }
+    .img-floating-wrapper {
+        animation: floatAnimation 4s infinite ease-in-out;
+    }
+
+    /* 2. Continuous Subtle Glow Effect for Your Name */
+    @keyframes pulseGlow {
+        0%, 100% { text-shadow: 0 0 10px rgba(13, 202, 240, 0.2); }
+        50% { text-shadow: 0 0 20px rgba(13, 202, 240, 0.6), 0 0 30px rgba(13, 202, 240, 0.4); }
+    }
+    .animated-name {
+        display: inline-block;
+        animation: pulseGlow 3s infinite ease-in-out;
+    }
+
+    /* 3. Soft Ambient Shadow Layer around the Image Frame */
+    .profile-img-shadow {
+        box-shadow: 0 0 25px rgba(13, 202, 240, 0.3) !important;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    /* Scaled up subtly when hovered over with mouse cursor */
+    .profile-img-shadow:hover {
+        transform: scale(1.03);
+        box-shadow: 0 0 35px rgba(13, 202, 240, 0.6) !important;
+    }
+
+    /* 4. Interactive Lifting and Glow States for Action Buttons */
+    .btn-animated {
+        transition: all 0.3s ease-in-out !important;
+    }
+    .btn-animated:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(13, 202, 240, 0.4) !important;
+    }
+</style>
     <section id="about" class="py-5 text-white" style="background: linear-gradient(135deg, #0b0f19 0%, #111827 100%);">
         <div class="container" data-aos="fade-up" data-aos-duration="800">
             <div class="text-center mb-5">
